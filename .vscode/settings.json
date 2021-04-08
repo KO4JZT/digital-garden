@@ -25,4 +25,15 @@
   "spellright.notificationClass": "warning",
   "vscodeMarkdownNotes.noteCompletionConvention": "noExtension",
   "vscodeMarkdownNotes.slugifyMethod": "github-slugger",
+  "gitmoji.onlyUseAdditionalEmojis": true,
+  "gitmoji.additionalEmojis": [
+    {
+      "emoji": "✨",
+      "description": "New note file added"
+    },
+    {
+      "emoji": "⚙",
+      "description": "Update configuration/settings"
+    }
+  ]
 }

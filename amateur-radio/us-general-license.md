@@ -7,6 +7,9 @@ type: seed
 # US General Class License
 
 Notes based on The ARRL General Class License Manual For Ham Radio (9th Edition).
+
+> Note: This document got a LOT longer than expected. I plan on separating this into a few documents later if I get around to it, but feel free to let me know if you think any of these sections would work well in its own page as is.
+
 - [US General Class License](#us-general-class-license)
   - [Chapter 1: Introduction](#chapter-1-introduction)
     - [Quick Privileges Table](#quick-privileges-table)
@@ -19,6 +22,14 @@ Notes based on The ARRL General Class License Manual For Ham Radio (9th Edition)
   - [Chapter 2.2: Emergency Operation](#chapter-22-emergency-operation)
     - [ARES and Races](#ares-and-races)
     - [Distress Calls](#distress-calls)
+  - [Chapter 3: Rules and Regulations](#chapter-3-rules-and-regulations)
+    - [Regulatory Agencies](#regulatory-agencies)
+    - [Amateur Licensing Rules](#amateur-licensing-rules)
+    - [Control Operator Privileges and Rules](#control-operator-privileges-and-rules)
+    - [Third Party Traffic](#third-party-traffic)
+    - [Prohibited/Restricted Communications](#prohibitedrestricted-communications)
+    - [Technical Rules and Standards](#technical-rules-and-standards)
+      - [**Digital Transmissions**](#digital-transmissions)
   - [Q-Code and Prosign Glossary](#q-code-and-prosign-glossary)
   - [References](#references)
 
@@ -26,7 +37,6 @@ Notes based on The ARRL General Class License Manual For Ham Radio (9th Edition)
 ## Chapter 1: Introduction
 
 * Once you have a CSCE you can transmit in general bands with /AG until FCC ULS updates.
-* The CSCE is good/valid for 365 days (ex. in case of delays).
 
 ### Quick Privileges Table
 
@@ -167,6 +177,101 @@ REGARDLESS of what is happening, all operators not in the situation should stand
 
 **Any frequency may be used as long as the emergency exists.**
 
+## Chapter 3: Rules and Regulations
+
+### Regulatory Agencies
+
+* International Telecommunication Union (ITU)
+  * North + South America, Alaska, Hawaii, + most US Territories are in ITU Region 2
+  * Section 97.301(a) and (d) cover Region 2 frequency allocations for General Class
+* Federal Communications Commission (FCC)
+  * Regulations apply to any amateur who is operating where FCC has jurisdiction
+  * Frequency sharing arrangements on the different bands are controlled by Part 97.303
+  * Amateur Auxiliary
+    * Volunteer Monitoring Program - encourage self-regulation and compliance with the rules
+    * Made up of amateur volunteers formally enlisted to monitor airwaves
+* Federal Aviation Administration (FAA)
+  * Amateurs who want to construct an antenna structure >200ft high must contact FAA and register tower with FCC
+* **PRB-1: Amateur Service communications must be reasonably accommodated...regulations must be minimum practical and have a legitimate purpose.**
+
+### Amateur Licensing Rules
+
+* Volunteer Examiners
+  * administered by 14 Volunteer Examiner Coordinators (VECs)
+  * To become a VE, you must meet the FCC requirements in 97.509(b)
+    * Be accredited by a VEC
+    * Be at least 18 years of age
+    * Hold a General class or higher license
+    * Have never had your amateur radio license suspended/revoked
+* Every exam must be coordinated by one of the VECs and administered under observation of 3 primary VEs accredited by organizing VEC
+* 3 primary VEs must hold license class higher to administer exam (ex. 3 general OR extra for technician)
+* Successful applicants are given a Certificate of Successful Completion of Examination (valid for 365 days)
+* NCVEC Quick-Form 605 must be filled out for each candidate who successfully passes/upgrades
+* If you can pass the Element 2 exam and prove you had General, Advanced, or Extra you can get credit for them
+
+### Control Operator Privileges and Rules
+
+* Check to make sure you're within the proper band segment before transmitting
+* On all of the bands where Generals have access to part, the privileges are located at the top of the band (ex. 40m)
+* **Generals have all privileges on 160, 60, 30, 17, 12, 10m bands**
+* Repeater operation is limited to 29.6 - 29.7 MHz.
+* Band Specific Regulations
+  * 60m - channelized operation at power limit of 100W ERP (1/2 wave dipole, bandwidth 2.8 kHz)
+  * 30m - only CW, RTTY, data, power limit of 200W PEP
+* If you are operating in a secondary amateur allocation and a primary service begins transmitting, you must move or stop transmitting. 
+  * NOTE: Amateur radio shares the 13cm band (2.3 GHz) w/ wifi channels but may not communicate with unlicensed wifi stations.
+* Required to take special steps to mitigate interference in the following:
+  * operating within one mile of an FCC monitoring station
+  * transmitting spread spectrum (SS) emissions
+  * using a band where amateur service is secondary
+* Beacons - observation of propagation and reception, other related activities
+  * no more than one beacon signal in the same band from a single location
+  * limited to 100W PEP output
+  * 28.2 to 28.3 is the only HF band segment where automatically controlled beacons may operate
+
+### Third Party Traffic
+
+[Third Party Agreements](https://arrl.org/third-party-operating-agreements) with the United States
+
+* Check if countries have a third-party agreement with the US before passing traffic
+* Third-party communications may be exchanged between any two amateur stations operating under FCC rules as long as they are non-commercial + personal/unimportant OR related to emergencies or disaster relief
+* Never exchanged for someone whose amateur license has been suspended/revoked + not reinstated
+* Phone Patch - ham can transmit speech from a third-party's telephone call over radio
+
+### Prohibited/Restricted Communications
+
+* One-way transmissions are not permitted outside of code practice for listening
+* Broadcasts cannot be retransmitted except for occasional weather or propagation predictions from a US gov. station 
+* Not allowed to communicate with amateurs in other countries where the country has objected to it through the ITU
+* Codes intended to obscure meaning of message are not allowed
+* Technicians can transmit on 10m downlink cross-band repeaters as long as the control operator of the repeater transmitter has a general class license or higher
+
+### Technical Rules and Standards
+
+* FCC determines what is and isn't "good engineering and good amateur practice"
+* General -> Extra licensees are limited to 1500 W PEP on the HF bands
+  * terminology: max legal power ("full gallon"), operating without an amp ("barefoot")
+  * PEP = standard power measurement specified in FCC rules for max power
+* Output power limit for spread spectrum is 10 watts
+* FCC requires you use the minimum power necessary to carry out the communications
+
+To determine your ERP, multiply transmitter output power by antenna gain (assume 1/2 wave dipole unless otherwise stated, not including feed line loss.)
+
+#### **Digital Transmissions**
+
+* Primarily concerned with the bandwidth of transmitted signal
+  * tied closely with symbol rate - how many signaling events take place every secondary
+  * Higher the symbol rate, wider the bandwidth required
+* At 33cm+ there is no limit except for band edges ("autobahn" of digital signaling)
+* Technical characteristics of new protocols must be publicly documented before using it on the air.
+  
+| Band           | Symbol Rate (baud) | Bandwidth (kHz) |
+| -------------- | ------------------ | --------------- |
+| 160m-12m       | 300                | 1               |
+| 10m            | 1200               | 1               |
+| 6m, 2m         | 19.6k              | 20              |
+| 1.25m, 70cm    | 56k                | 100             |
+| 33cm and above | no limit           | no limit        |
 ## Q-Code and Prosign Glossary
 
 * [ ] Does this deserve its own note?
@@ -174,6 +279,8 @@ REGARDLESS of what is happening, all operators not in the situation should stand
 * AR = End of Message
 * DE = from
 * K = over
+* QRO = increase power/I am using high power
+* QRP = reduce power/I am using low power
 * QRQ = send faster
 * QRS = send slower
 * QRV = I am ready to receive messages
@@ -195,8 +302,10 @@ You can email questions not found in book or website to `newham (at) arrl (dot) 
   * [FISTS](https://fists.org)
 * [ARES/RACES FAQ](https://arrl.org/ares-races-faw)
 * [Instructions for FCC ULS](https://arrl.org/universal-licensing-system)
-* Radio/Contest Calendars
-  * [ARRL Net Search](https://arrl.org/arrl-net-directory-search)
-  * [ARRL Contest Corral](https://arrl.org/contest-calendar)
-  * [Special Events List](https://arrl.org/special-event-stations)
-  * [WA7BNM Contest Calendar](https://contestcalendar.com) 
+* [Special Events List](https://arrl.org/special-event-stations)
+* [WA7BNM Contest Calendar](https://contestcalendar.com) 
+* [Full Copy of Part 97](https://arrl.org/part-97-amateur-radio)
+* [Foxhunting Info](https://homingin.com)
+* Beacon Services
+  * [Northern California DX Foundation](https://ncdxf.org)
+  * [Reverse Beacon Network](https://reversebeacon.net)

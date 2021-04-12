@@ -34,6 +34,10 @@
     {
       "emoji": "⚙",
       "description": "Update configuration/settings"
+    },
+    {
+      "emoji": "🌱",
+      "description": "Major notes update"
     }
   ]
 }

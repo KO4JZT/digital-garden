@@ -20,7 +20,8 @@ Other services: eQSL, QRZ.com, Clublog, Paper QSL Cards.
 2. Open TQSL - if given a prompt to request a callsign certificate click YES and follow the steps.
     * If you didn't see a prompt, click *Callsign Certificate* at the very top of the window, click *Request New Callsign Certificate...*, and follow the steps.
 3. To prove that you have access to the requested callsign, the ARRL will send the address listed in the FCC ULS a postcard with a code.
-4. 
+4. Once the postcard has arrived, go to https://lotw.arrl.org/lotw/postcard and enter the code on the front above your address.
+5. Wait for the callsign certificate to arrive in your email!
 
 ## Resources
 

@@ -30,6 +30,12 @@ Notes based on The ARRL General Class License Manual For Ham Radio (9th Edition)
     - [Prohibited/Restricted Communications](#prohibitedrestricted-communications)
     - [Technical Rules and Standards](#technical-rules-and-standards)
       - [**Digital Transmissions**](#digital-transmissions)
+  - [Chapter 4: Components and Circuits](#chapter-4-components-and-circuits)
+    - [Power and Decibels](#power-and-decibels)
+    - [AC Power](#ac-power)
+    - [Basic Components](#basic-components)
+    - [Reactance, Impedance, Resonance](#reactance-impedance-resonance)
+    - [Active Components](#active-components)
   - [Q-Code and Prosign Glossary](#q-code-and-prosign-glossary)
   - [References](#references)
 
@@ -272,6 +278,177 @@ To determine your ERP, multiply transmitter output power by antenna gain (assume
 | 6m, 2m         | 19.6k              | 20              |
 | 1.25m, 70cm    | 56k                | 100             |
 | 33cm and above | no limit           | no limit        |
+
+
+## Chapter 4: Components and Circuits
+
+> If anything deserves its own section later on, its this.
+
+### Power and Decibels
+
+**Formulas**
+
+Voltage (E): E = I x R
+Current (I): I = E / R
+Power (P): P = I^2 x R // P = (E^2)/R // P = E x I
+Resistance (R) = E/I
+Decibels (dB) = 10 log10 (power ratio) // 20 log10 (voltage ratio)
+
+* Calculating a Power or Voltage Ratio from dB
+  * power ratio: log^-1(dB/10)
+  * voltage ratio: log^-1(dB/20)
+* any time you double power or cut power in 1/2, there is a +-3dB change
+* Converting dB to percentage and vice-versa
+  * dB = 10log(%power/100%)
+  * db = 20log(%voltage/100%)
+  * %power = 100% * log^-1(dB/10)
+  * %voltage = 100% x log^-1(dB/20)
+* Reference Values
+  * dBV = dB w/ respect to 1 V
+  * dBuV = dB w/ respect to 1 uV
+  * dBm = db w/ respect to 1 mW
+* A harmonic is a frequency at some integer multiple of a fundamental frequency.
+* Review Notes
+  * As a frequency increases wavelength decreases + vice-versa
+  * Speed of light is approx.. 300 million meters per second
+
+### AC Power
+
+* root mean square voltage (RMS)
+  * If RMS is used in equations as power, result for AC signal is same as unvarying DC voltage
+  * square root of average of the squares of the values of the present signal voltages
+  * Vrms = 0.707 x V peak (PK)
+  * Vpk = 1.414 x Vrms
+  * ex. of usage - knowing what rating of capacitor to place across power line for RF filtering
+* peak envelope power (PEP)
+  * average power of one complete RF cycle at the peak of the signal's envelope
+  * used as a convenient way to measure or specify the maximum power of amplitude-modulated signals
+  * measure voltage at peak of modulated signal's envelope (PEV) then PEP = [(0.707 x Vp-p) / 2]^2 / R OR Vrms^2/R
+  * equal to the average power if an amplitude-modulated signal is not modulated (ex. CW)
+
+### Basic Components
+
+* Terminology
+  * nominal value - the quantity of a specific characteristic that the component is manufactured to exhibit (ex. 10 Ohm resistor)
+  * tolerance - the amount by which the actual value is allowed to vary from the nominal value (usually in percent)
+  * temperature coefficient (tempco) - the variation of the component's actual value with temperature, positive or negative 
+  * power/voltage/current rating - the rated ability of the component to withstand heat or dissipate power
+* divide by 1000 to covert: pico to nano, nano to micro, micro to milli, kilo to mega, mega to giga
+  * multiply by 1000 for Reverse
+* Resistors and Resistance
+  | Resistor Type      | Power Ratings | Applications                 |
+  | ------------------ | ------------- | ---------------------------- |
+  | Carbon Composition | 1/8 - 2 W     | General Use, Wire Leads      |
+  | Carbon Film        | 1/10 - 1/2 W  | General Use, Wire Leads, SMT |
+  | Metal Film         | 1/10 - 1/2 W  | Low-noise, wire leads, SMT   |
+  | Wirewound          | 1 W - 100+ W  | Power Circuits               |
+  | Metal Oxide        | 1/2 - 10 W    | Non-inductive, RF            |
+* Inductors and Inductance
+  * inductance - measure of inductor's ability to store magnetic energy
+  * inductance -> proportional to number of turns squared + area enclosed by each turn
+  * Types of Inductors
+    * *laminated iron core* - dc/ac power filtering
+    * *powdered iron solenoid* - power supplies, RF chokes, audio, low-frequency circuits
+    * *powdered iron and ferrite toroids* - audio and radio circuits
+    * *air core* - RF transmitting
+  * when two inductors are placed close together with aligned axes, coupled together and share energy (mutual inductance)
+  * toroids can be placed next to each other with minimal mutual inductance
+  * combination of materials in a ferrite core used is selected so the inductor performs best over a specific range of frequencies
+* Capacitors and Capacitance
+  * two conducting surfaces (electrodes) separated by a dielectric that stores electrical energy and prevents dc current flow
+  * capacitance is increased by larger surface areas, bringing surfaces closer together, or using different dielectric materials
+  * simplest - pair of metal plates separated by air (changing area of overlap varies capacitance)
+  * Styles of Capacitors 
+    * aluminum electrolytic
+      * metal foil for conducting surfaces w/ dielectric of insulating layer (wet paste, gel)
+    * tantalum electrolytic
+      * tantalum immersed in an electrolyte
+      * large capacitances in small volumes
+  * look for polarity markings + voltage rating on capacitor to install it correctly
+  * Types of Capacitors 
+    * ceramic - RF filtering + bypassing at high frequencies, low cost
+    * plastic film - circuits operating at audio + lower radio freq.
+    * silvered-mica - highly stable, low-loss, RF circuits
+    * electrolytic and tantalum - power supply filter 
+    * air and vacuum dielectric - transmitting and RF
+  * blocking capacitors - pass ac block dc
+  * bypass - low impedance for ac around higher impedance component/circuit
+  * filter - smooth out voltage pulses of ac to dc
+  * suppressor - absorb spikes
+  * tuning - vary freq. of resonant circuits
+* Transformers
+  * transfer AC power between two or more inductors (windings) sharing a common core
+  * power applied to primary winding and supplied from secondary winding
+  * when voltage is applied to the primary winding, mutual inductance causes voltage to appear across secondary
+  * change power from one combo of ac voltage and current to another by using windings with different number of turns
+  * a significant change between voltages usually requires a change in the size of wire between windings
+  * $$ Esecondary = Eprimary * (Ns)/(Np) > n = windings$$
+* Components in Series and Parallel Circuits
+  * Review
+    * Voltages add in a series circuit
+    * Currents add in a parallel circuit
+  * $$ R_{EQU} = \frac{R1 x R2}{R1 + R2} $$
+
+### Reactance, Impedance, Resonance
+
+* Reactance
+  * resistance to ac current flow caused by capacitance/inductance
+  * measured in ohms
+  * Capacitive Reactance
+    * the more energy stored and the higher the voltage across the capacitor, the smaller the current that flows
+    * a capacitor blocks dc current, resists low-frequency ac current, and passes high-frequency ac current
+    * $$ X_{C} = (\frac{1}{2pifC})$$
+      * as the freq. of the applied signal increases, capacitive resistance decreases
+  * Inductive Reactance
+    * inductors resist ac current in a complementary way
+    * initial current of 0, fully applied voltage appears across the inductor
+    * opposite of a capacitor that blocks DC currents
+    * $$ X_{L} = 2pifL
+    * as freq. increases, inductive reactance increases
+  * Capacitors oppose changes in voltage, while inductors oppose changes in current. Both oppose flow of ac current in complimentary ways.
+* Parasitic Inductance and Capacitance
+  * an unwanted characteristic resulting from the component's physical construction
+  * if a wire-wound resistor is used in an RF circuit, the resulting inductive reactance is enough to disrupt operation or affect tuning
+* Impedance and Resonance
+  * impedance (Z, ohms)
+    * general term for opposition to current flow in an ac circuit caused by resistance, reactance, or both 
+    * ratio of voltage to current
+  * Resonance
+    * condition in which there is a match between the frequency a circuit or antenna naturally responds and an applied signal
+    * capacity and inductive reactances are equal
+    * above the self-resonant frequency (expected reactance is equal to parasitic reactance) types switch (capacitor inductive vice versa)
+  * Impedance Transformation
+    * can change the combination of voltage and current while transferring energy, transforms impedance between primary and secondary circuits
+  * Impedance Matching
+    * an energy source's ability to deliver power to a load is limited by its internal impedance
+    * when the impedance of an electrical load is equal to the output impedance of a power source, assuming both impedances are resistive - RF source can deliver max power
+    * most impedance matching circuits are LC circuits made of inductors and capacitors
+    * impedance transformers equalize impedances to maximize power transfer
+    * also done by a length of transmission line
+
+### Active Components
+
+* Usually require a source of power and may include passive components
+* Semiconductor Components
+  * conduct electricity better than an insulator but not metal (ex. Si + Ge)
+  * dopants / doping - impurities added to control conductance
+  * Diodes and Rectifiers
+    * $$V_{F} = 0.3 V (germanium) / 0.7 V (silicon) $$
+  * MOSFET - insulting layer of oxide between gate and transistor
+  * stable operating points for a bipolar transistor - saturation and cutoff
+    * on/off in logic circuits
+
+* Vacuum Tubes
+  * 3 basic parts: a source of electrons, an electrode to collect the electrons, intervening electrodes controlling travel
+  * filament/heater - heats the cathode, causing it to emit electrons
+  * cathode - source of electrons
+  * control grid - the grid closest to cathode, regulates electron travel between cathode and plate
+  * plate - electrode collecting electrons
+  * screen grid - reduces grid-to-plate capacitance that diminishes the tube's ability to amplify at high frequencies
+  * suppressor grid - prevents electrons from traveling from the plate to the control or screen grid
+  
+* Analog and Digital Integrated Circuits
+  * Analog ICs - operational amplifier, linear voltage regulator
 ## Q-Code and Prosign Glossary
 
 * [ ] Does this deserve its own note?

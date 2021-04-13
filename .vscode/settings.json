@@ -28,7 +28,7 @@
   "gitmoji.onlyUseAdditionalEmojis": true,
   "gitmoji.additionalEmojis": [
     {
-      "emoji": "✨",
+      "emoji": "🌱",
       "description": "New note file added"
     },
     {
@@ -36,8 +36,8 @@
       "description": "Update configuration/settings"
     },
     {
-      "emoji": "🌱",
-      "description": "Major notes update"
+      "emoji": "💧",
+      "description": "Update notes"
     }
   ]
 }

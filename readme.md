@@ -30,8 +30,10 @@ Don't plagiarize. You're welcome to quote, with attribution and a link back here
 
 ### Note Type
 
-**Seeds** are brand new notes that I haven't fully fleshed out yet. These might include some kind of basic thought I felt I needed to jot down, a quote I liked and want to journal on later, or something else. 
+**🌱 Seeds** are brand new notes that I haven't fully fleshed out yet. These might include some kind of basic thought I felt I needed to jot down, a quote I liked and want to journal on later, or something else. 
 
-**Sprouts** are notes that I've written a little bit of detail on, and can serve as a good reference for later info. With a little bit of polishing and watering, these notes can quickly become trees.
+**🌿 Sprouts** are notes that I've written a little bit of detail on, and can serve as a good reference for later info. With a little bit of polishing and watering, these notes can quickly become trees.
 
-**Trees** are blog-post worthy notes, either they have been posted or I'm planning on posting it at some point. If I have blogged about it, you can find it at [ko4jzt.tech](https://ko4jzt.tech).
+**🍊 Fruit** are fully fleshed out notes that won't become a blog post, but may be a later topic of a blog post. This could include book notes, school notes, or general studying.
+
+**🌲 Trees** are blog-post worthy notes, either they have been posted or I'm planning on posting it at some point. If I have blogged about it, you can find it at [ko4jzt.tech](https://ko4jzt.tech).
